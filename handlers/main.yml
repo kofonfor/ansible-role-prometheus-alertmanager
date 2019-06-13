@@ -1,0 +1,10 @@
+---
+- name: restart alertmanager
+  debug: msg="restarting alertmanager with {{ prometheus_supervisor }}"
+  changed_when: true
+  notify: "{{ prometheus_supervisor }} restart alertmanager"
+
+- name: reload alertmanager
+  debug: msg="reloading alertmanager with {{ prometheus_supervisor }}"
+  changed_when: true
+  notify: "{{ prometheus_supervisor }} reload alertmanager"
